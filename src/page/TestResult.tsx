@@ -64,7 +64,10 @@ const TestResult = () => {
         testParams={testParams as string}
         resultParams={resultParams as string}
       />
-      <ResultThumbnailList testParam={testParams as string} />
+      <ResultThumbnailList
+        testParam={testParams as string}
+        lang={testData.info.lang}
+      />
     </div>
   );
 };

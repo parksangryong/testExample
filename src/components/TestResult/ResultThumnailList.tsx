@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 
 interface ResultThumbnailListProps {
   testParam: string;
+  lang: string;
 }
 
-const ResultThumbnailList = ({ testParam }: ResultThumbnailListProps) => {
+const ResultThumbnailList = ({ testParam, lang }: ResultThumbnailListProps) => {
   const [testList] = useState(TESTS);
 
   return (
     <div>
       {testList
         .filter((test) => test?.info?.mainUrl !== testParam)
+        .filter((test) => test?.info?.lang === lang)
         .map((item) => (
           <div key={`/${item?.info?.mainUrl}`}>
             <Link to={`/${item?.info?.mainUrl}`}>
