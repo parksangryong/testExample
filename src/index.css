@@ -45,3 +45,29 @@
   border: 2px solid brown;
   background-color: white;
 }
+
+/* Result */
+.urlShareButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: brown;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+}
+.urlShareButton:hover {
+  background-color: lightcoral;
+}
+.shareButtonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 2.5rem 0;
+}
+.shareTitle {
+  margin-top: 1rem;
+}

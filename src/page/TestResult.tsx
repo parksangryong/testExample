@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 // data
 import { TESTS } from "../data/TESTS";
+import { TestProps } from "../types/dataType";
 
 // Components
 import TestResultRenderer from "../components/TestResult/TestResultRenderer";
@@ -18,7 +19,20 @@ interface ResultInfo {
 
 const TestResult = () => {
   const { testParams, resultParams } = useParams();
-  const [testData, setTestData] = useState({});
+  const [testData, setTestData] = useState<TestProps>({
+    info: {
+      mainTitle: "",
+      subTitle: "",
+      mainUrl: "",
+      scoreType: "",
+      mainImage: "",
+      thumbImage: "",
+      lang: "",
+      category: "",
+    },
+    questions: [],
+    results: [],
+  });
   const [resultInfo, setResultInfo] = useState<ResultInfo>({
     type: "",
     query: "",
@@ -41,7 +55,11 @@ const TestResult = () => {
   return (
     <div>
       <TestResultRenderer resultInfo={resultInfo} />
-      <ShareButtonGroup />
+      <ShareButtonGroup
+        testParams={testParams as string}
+        resultParams={resultParams as string}
+        renderTestInfo={testData}
+      />
       <ResultButtonGroup />
       <ResultThumbnailList />
     </div>
