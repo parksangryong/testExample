@@ -1,5 +1,9 @@
 const MainBanner = () => {
-  return <div>Main Banner</div>;
+  return (
+    <div className="mainBanner">
+      <h1>MBTI TEST PLATFORM</h1>
+    </div>
+  );
 };
 
 export default MainBanner;

@@ -4,13 +4,26 @@
   box-sizing: border-box;
 }
 
-/* Main */
+/* Layout */
 .layout-container {
   width: 100%;
   max-width: 35rem;
   margin: 0 auto;
   padding: 0 5px;
   text-align: center;
+}
+
+/* Main */
+.mainBanner {
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+.languageIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .imageWidth {
