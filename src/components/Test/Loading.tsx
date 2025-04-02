@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Lottie from "react-lottie";
 import { QuizProps, TestProps } from "../../types/dataType";
@@ -22,7 +22,7 @@ const Loading = ({ mbtiScore, currentTest }: LoadingProps) => {
     },
   };
 
-  const calculateMbtiType = () => {
+  const calculateMbtiType = useCallback(() => {
     const mbtiPairs = [
       ["E", "I"],
       ["N", "S"],
@@ -35,7 +35,7 @@ const Loading = ({ mbtiScore, currentTest }: LoadingProps) => {
       const secondScore = mbtiScore[secondType as keyof QuizProps["mbtiScore"]];
       return resultType + (firstScore > secondScore ? firstType : secondType);
     }, "");
-  };
+  }, [mbtiScore]);
 
   useEffect(() => {
     const resultType = calculateMbtiType();
@@ -46,14 +46,14 @@ const Loading = ({ mbtiScore, currentTest }: LoadingProps) => {
     if (resultQuery) {
       setFinalQuery(resultQuery);
     }
-  }, [mbtiScore, currentTest]);
+  }, [calculateMbtiType, currentTest]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (finalQuery) {
         navigate(`/${currentTest.info.mainUrl}/result/${finalQuery}`);
       }
-    }, 3700);
+    }, 4000);
 
     return () => clearTimeout(timeout);
   }, [finalQuery, currentTest.info.mainUrl, navigate]);
