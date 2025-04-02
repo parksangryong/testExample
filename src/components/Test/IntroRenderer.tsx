@@ -40,8 +40,7 @@ const IntroRenderer = ({ currentTest }: IntroRendererProps) => {
       />
     );
   } else if (mode === "loading") {
-    console.log(mbtiScore);
-    return <Loading />;
+    return <Loading mbtiScore={mbtiScore} currentTest={currentTest} />;
   } else {
     return <Error />;
   }
