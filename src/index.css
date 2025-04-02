@@ -4,10 +4,21 @@
   box-sizing: border-box;
 }
 
+/* Main */
 .layout-container {
   width: 100%;
   max-width: 35rem;
   margin: 0 auto;
   padding: 0 5px;
   text-align: center;
+}
+
+.thumbnail-image {
+  width: 100%;
+}
+
+.thumbnail-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
