@@ -25,19 +25,28 @@ const CategoryButtons = () => {
   return (
     <div>
       <button
-        className="category-button"
+        className={`category-button ${
+          searchParams.get("category") === "all" ||
+          searchParams.get("category") === null
+            ? "active"
+            : ""
+        }`}
         onClick={() => onCategoryButtonClick("all")}
       >
         전체
       </button>
       <button
-        className="category-button"
+        className={`category-button ${
+          searchParams.get("category") === "love" ? "active" : ""
+        }`}
         onClick={() => onCategoryButtonClick("love")}
       >
         연애
       </button>
       <button
-        className="category-button"
+        className={`category-button ${
+          searchParams.get("category") === "characteristic" ? "active" : ""
+        }`}
         onClick={() => onCategoryButtonClick("characteristic")}
       >
         성격
