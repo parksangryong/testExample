@@ -59,6 +59,23 @@
   background-color: white;
 }
 
+.category-button {
+  width: 5rem;
+  height: 2rem;
+  margin: 1rem;
+  border: 1px solid brown;
+  border-radius: 1rem;
+  background-color: white;
+  color: brown;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.category-button:hover {
+  background-color: brown;
+  color: white;
+}
+
 /* Result */
 .urlShareButton {
   width: 48px;

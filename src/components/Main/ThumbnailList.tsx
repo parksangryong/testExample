@@ -8,11 +8,19 @@ const ThumbnailList = () => {
   const [testList, setTestList] = useState(TESTS);
 
   useEffect(() => {
-    const currentLang = searchParams.get("lang") || "kor";
+    const currentLang = searchParams.get("lang") || "Kor";
+    const currentCategory = searchParams.get("category") || "all";
+
     if (currentLang) {
-      const filteredTestList = TESTS.filter((test) => {
+      let filteredTestList = TESTS.filter((test) => {
         return test.info.lang === currentLang;
       });
+
+      if (currentCategory !== "all") {
+        filteredTestList = filteredTestList.filter(
+          (test) => test.info.category === currentCategory
+        );
+      }
       setTestList(filteredTestList);
     }
   }, [searchParams]);
