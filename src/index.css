@@ -71,3 +71,30 @@
 .shareTitle {
   margin-top: 1rem;
 }
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.upperButtonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.lowerButtonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.upperButton {
+  width: 40%;
+}
+.lowerButton {
+  width: 100%;
+}

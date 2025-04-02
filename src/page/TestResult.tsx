@@ -60,7 +60,10 @@ const TestResult = () => {
         resultParams={resultParams as string}
         renderTestInfo={testData}
       />
-      <ResultButtonGroup />
+      <ResultButtonGroup
+        testParams={testParams as string}
+        resultParams={resultParams as string}
+      />
       <ResultThumbnailList />
     </div>
   );
