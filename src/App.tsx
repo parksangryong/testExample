@@ -6,6 +6,8 @@ import Test from "./page/Test";
 import TestResult from "./page/TestResult";
 import Layout from "./Layout";
 
+import { testLoader, resultLoader } from "./utils/testLoader";
+
 export const base_Url = "http://localhost:5173";
 
 function App() {
@@ -21,10 +23,12 @@ function App() {
         {
           path: "/:testParams",
           element: <Test />,
+          loader: testLoader,
         },
         {
           path: "/:testParams/result/:resultParams",
           element: <TestResult />,
+          loader: resultLoader,
         },
       ],
     },
