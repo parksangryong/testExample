@@ -1,4 +1,4 @@
-import { TestProps } from "../../page/Test";
+import { TestProps } from "../../data/dataType";
 
 interface IntroRendererProps {
   currentTest: TestProps | null;
