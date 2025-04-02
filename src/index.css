@@ -27,3 +27,21 @@
   font-weight: bold;
   color: brown;
 }
+
+/* Quiz */
+.questionText {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.answerButton {
+  display: block;
+  width: 20rem;
+  margin: 1rem auto;
+  height: 5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: 2px solid brown;
+  background-color: white;
+}

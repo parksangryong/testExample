@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TestProps } from "../../data/dataType";
+import { TestProps, QuizProps } from "../../types/dataType";
 
 // components
 import Intro from "./Intro";
@@ -13,6 +13,16 @@ interface IntroRendererProps {
 
 const IntroRenderer = ({ currentTest }: IntroRendererProps) => {
   const [mode, setMode] = useState<"intro" | "quiz" | "loading">("intro");
+  const [mbtiScore, setMbtiScore] = useState<QuizProps["mbtiScore"]>({
+    E: 0,
+    I: 0,
+    N: 0,
+    S: 0,
+    T: 0,
+    F: 0,
+    P: 0,
+    J: 0,
+  });
 
   if (!currentTest) {
     return <Error />;
@@ -21,8 +31,16 @@ const IntroRenderer = ({ currentTest }: IntroRendererProps) => {
   if (mode === "intro") {
     return <Intro info={currentTest.info} setMode={setMode} />;
   } else if (mode === "quiz") {
-    return <Quiz />;
+    return (
+      <Quiz
+        setMode={setMode}
+        questions={currentTest.questions}
+        mbtiScore={mbtiScore}
+        setMbtiScore={setMbtiScore}
+      />
+    );
   } else if (mode === "loading") {
+    console.log(mbtiScore);
     return <Loading />;
   } else {
     return <Error />;

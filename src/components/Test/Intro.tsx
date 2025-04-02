@@ -1,4 +1,4 @@
-import { TestProps } from "../../data/dataType";
+import { TestProps } from "../../types/dataType";
 
 // components
 import IntroButtonGroup from "./IntroButtonGroup";

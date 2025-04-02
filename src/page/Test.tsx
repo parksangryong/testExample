@@ -8,7 +8,7 @@ import { TESTS } from "../data/TESTS";
 import IntroRenderer from "../components/Test/IntroRenderer";
 
 // type
-import { TestProps } from "../data/dataType";
+import { TestProps } from "../types/dataType";
 
 const Test = () => {
   const { testParams } = useParams();

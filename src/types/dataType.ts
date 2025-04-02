@@ -23,3 +23,16 @@ export interface TestProps {
     img_src: string;
   }[];
 }
+
+export interface QuizProps {
+  mbtiScore: {
+    E: number;
+    I: number;
+    N: number;
+    S: number;
+    T: number;
+    F: number;
+    P: number;
+    J: number;
+  };
+}
