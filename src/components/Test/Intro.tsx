@@ -3,12 +3,17 @@ import { TestProps } from "../../types/dataType";
 // components
 import IntroButtonGroup from "./IntroButtonGroup";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 interface IntroProps {
   info: TestProps["info"];
   setMode: (mode: "intro" | "quiz" | "loading") => void;
 }
 
 const Intro = ({ info, setMode }: IntroProps) => {
+  const { t } = useTranslation();
+
   const imageClickHandler = () => {
     setMode("quiz");
   };
@@ -24,10 +29,10 @@ const Intro = ({ info, setMode }: IntroProps) => {
         className="imageWidth"
       />
       <p>
-        <span className="boldText">{info.mainTitle}</span>로 여러분의 성향을
-        테스트해보세요!
+        <span className="boldText">{info.mainTitle}</span>
+        {t("intro")}
       </p>
-      <IntroButtonGroup />
+      <IntroButtonGroup testParams={info.mainUrl} lang={info.lang} />
     </div>
   );
 };

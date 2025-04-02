@@ -1,0 +1,13 @@
+{
+  "title": "MBTI 테스트!",
+  "all": "전체",
+  "love": "연애",
+  "characteristic": "성격",
+  "intro": "이 테스트로 여러분의 성격 유형을 알아보세요!",
+  "copy": "링크복사",
+  "copySuccess": "URL이 복사되었습니다.",
+  "redo": "다시하기",
+  "home": "다른 테스트 하러 가기",
+  "resultText": "결과는...",
+  "share": "친구한테 공유하기"
+}

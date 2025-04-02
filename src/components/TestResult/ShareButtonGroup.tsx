@@ -9,7 +9,9 @@ import { base_Url } from "../../App";
 // type
 import { TestProps } from "../../types/dataType";
 
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// i18n
+import { useTranslation } from "react-i18next";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 interface ShareButtonGroupProps {
   testParams: string;
@@ -22,9 +24,11 @@ const ShareButtonGroup = ({
   resultParams,
   renderTestInfo,
 }: ShareButtonGroupProps) => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h3 className="shareTitle">친구한테 공유하기</h3>
+      <h3 className="shareTitle">{t("share")}</h3>
       <div className="shareButtonGroup">
         <FacebookShareButton
           url={`${base_Url}/${testParams}/result/${resultParams}`}
@@ -44,7 +48,7 @@ const ShareButtonGroup = ({
         >
           <button
             onClick={() => {
-              alert("URL이 복사되었습니다.");
+              alert(t("copySuccess"));
             }}
             className="urlShareButton"
           >

@@ -11,6 +11,9 @@ import ShareButtonGroup from "../components/TestResult/ShareButtonGroup";
 import ResultButtonGroup from "../components/TestResult/ResultButtonGroup";
 import ResultThumbnailList from "../components/TestResult/ResultThumnailList";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 interface ResultInfo {
   type: string;
   query: string;
@@ -19,6 +22,8 @@ interface ResultInfo {
 
 const TestResult = () => {
   const { testParams, resultParams } = useParams();
+  const { i18n } = useTranslation();
+
   const [testData, setTestData] = useState<TestProps>({
     info: {
       mainTitle: "",
@@ -52,6 +57,10 @@ const TestResult = () => {
     }
   }, [testParams, resultParams]);
 
+  useEffect(() => {
+    i18n.changeLanguage(testData.info.lang || "Kor");
+  }, [testData, i18n]);
+
   return (
     <div>
       <TestResultRenderer resultInfo={resultInfo} />
@@ -63,6 +72,7 @@ const TestResult = () => {
       <ResultButtonGroup
         testParams={testParams as string}
         resultParams={resultParams as string}
+        lang={testData.info.lang}
       />
       <ResultThumbnailList
         testParam={testParams as string}

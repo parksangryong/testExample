@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const CategoryButtons = () => {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const [lang, setLang] = useState("Kor");
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ const CategoryButtons = () => {
         }`}
         onClick={() => onCategoryButtonClick("all")}
       >
-        전체
+        {t("all")}
       </button>
       <button
         className={`category-button ${
@@ -41,7 +43,7 @@ const CategoryButtons = () => {
         }`}
         onClick={() => onCategoryButtonClick("love")}
       >
-        연애
+        {t("love")}
       </button>
       <button
         className={`category-button ${
@@ -49,7 +51,7 @@ const CategoryButtons = () => {
         }`}
         onClick={() => onCategoryButtonClick("characteristic")}
       >
-        성격
+        {t("characteristic")}
       </button>
     </div>
   );

@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 interface TestResultRendererProps {
   resultInfo: {
     type: string;
@@ -7,9 +9,11 @@ interface TestResultRendererProps {
 }
 
 const TestResultRenderer = ({ resultInfo }: TestResultRendererProps) => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h3>결과는...</h3>
+      <h3>{t("resultText")}</h3>
       <img
         src={resultInfo.img_src}
         alt={resultInfo.type}

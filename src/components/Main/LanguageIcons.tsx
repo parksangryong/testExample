@@ -1,12 +1,15 @@
 import { CircleFlag } from "react-circle-flags";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const LanguageIcons = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const { i18n } = useTranslation();
 
   const onButtonClick = (countryCode: string) => {
     navigate(`/?lang=${countryCode}`);
+    i18n.changeLanguage(countryCode);
   };
 
   return (

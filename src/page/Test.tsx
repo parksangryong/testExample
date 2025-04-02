@@ -10,9 +10,13 @@ import IntroRenderer from "../components/Test/IntroRenderer";
 // type
 import { TestProps } from "../types/dataType";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 const Test = () => {
   const { testParams } = useParams();
   const [currentTest, setCurrentTest] = useState<TestProps | null>(null);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const currentTest = TESTS.find((test) => test.info.mainUrl === testParams);
@@ -20,6 +24,10 @@ const Test = () => {
       setCurrentTest(currentTest);
     }
   }, [testParams]);
+
+  useEffect(() => {
+    i18n.changeLanguage(currentTest?.info.lang || "Kor");
+  }, [currentTest, i18n]);
 
   return (
     <div>
