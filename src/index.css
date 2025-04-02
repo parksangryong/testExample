@@ -13,7 +13,7 @@
   text-align: center;
 }
 
-.thumbnail-image {
+.imageWidth {
   width: 100%;
 }
 
@@ -21,4 +21,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+}
+
+.boldText {
+  font-weight: bold;
+  color: brown;
 }

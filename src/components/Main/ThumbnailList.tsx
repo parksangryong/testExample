@@ -13,7 +13,7 @@ const ThumbnailList = () => {
           <img
             src={test.info.thumbImage}
             alt={test.info.mainUrl}
-            className="thumbnail-image"
+            className="imageWidth"
           />
         </Link>
       ))}
