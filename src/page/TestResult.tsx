@@ -10,10 +10,20 @@ import ShareButtonGroup from "../components/TestResult/ShareButtonGroup";
 import ResultButtonGroup from "../components/TestResult/ResultButtonGroup";
 import ResultThumbnailList from "../components/TestResult/ResultThumnailList";
 
+interface ResultInfo {
+  type: string;
+  query: string;
+  img_src: string;
+}
+
 const TestResult = () => {
   const { testParams, resultParams } = useParams();
   const [testData, setTestData] = useState({});
-  const [resultInfo, setResultInfo] = useState({});
+  const [resultInfo, setResultInfo] = useState<ResultInfo>({
+    type: "",
+    query: "",
+    img_src: "",
+  });
 
   useEffect(() => {
     const currentTest = TESTS.find((test) => test.info.mainUrl === testParams);

@@ -1,7 +1,9 @@
-import { TestProps } from "../../types/dataType";
-
 interface TestResultRendererProps {
-  resultInfo: TestProps["results"][0];
+  resultInfo: {
+    type: string;
+    query: string;
+    img_src: string;
+  };
 }
 
 const TestResultRenderer = ({ resultInfo }: TestResultRendererProps) => {
