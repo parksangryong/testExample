@@ -20,17 +20,18 @@ const Intro = ({ info, setMode }: IntroProps) => {
 
   return (
     <div>
-      <h1>{info.mainTitle}</h1>
-      <p>{info.subTitle}</p>
+      <h1 className="mainTitle">{info.mainTitle}</h1>
+      <p className="subTitle">
+        <i>{info.subTitle}</i>
+      </p>
       <img
         onClick={imageClickHandler}
         src={info.mainImage}
         alt={info.mainTitle}
         className="imageWidth"
       />
-      <p>
-        <span className="boldText">{info.mainTitle}</span>
-        {t("intro")}
+      <p className="introText">
+        <span className="boldText">{info.mainTitle}</span>, {t("intro")}
       </p>
       <IntroButtonGroup testParams={info.mainUrl} lang={info.lang} />
     </div>

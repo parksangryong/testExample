@@ -13,7 +13,7 @@ const TestResultRenderer = ({ resultInfo }: TestResultRendererProps) => {
 
   return (
     <div>
-      <h3>{t("resultText")}</h3>
+      <h3 className="resultText">{t("resultText")}</h3>
       <img
         src={resultInfo.img_src}
         alt={resultInfo.type}

@@ -46,7 +46,7 @@ const Quiz = ({
         percent={(questionNumber / questions.length) * 100}
         showInfo={false}
         strokeColor="brown"
-        trailColor="lightgray"
+        trailColor="#eee"
         size={{ height: 10 }}
       />
     </div>
