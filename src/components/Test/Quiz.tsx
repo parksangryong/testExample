@@ -43,12 +43,16 @@ const Quiz = ({
         </button>
       ))}
       <Progress
-        percent={(questionNumber / questions.length) * 100}
+        percent={((questionNumber + 1) / questions.length) * 100}
         showInfo={false}
         strokeColor="brown"
         trailColor="#eee"
-        size={{ height: 10 }}
+        size={{ height: 10, width: 250 }}
+        style={{ margin: "2rem 0 1rem 0" }}
       />
+      <span className="questionNumber">{`${questionNumber + 1} / ${
+        questions.length
+      }`}</span>
     </div>
   );
 };

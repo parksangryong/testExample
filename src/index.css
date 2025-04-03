@@ -9,7 +9,7 @@
   width: 100%;
   max-width: 35rem;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 5px 40px 0;
   text-align: center;
 }
 
@@ -20,14 +20,14 @@
 /* Main */
 .mainBanner {
   height: 60px;
-  width: 35rem;
+  max-width: 35rem;
   margin: 0 auto;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgba(165, 42, 42, 0.1);
+  background-color: #d8bdbd;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,18 +67,23 @@
 /* Quiz */
 .questionText {
   margin: 3rem 0;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
 }
 
 .answerButton {
   display: block;
   width: 20rem;
   margin: 1rem auto;
-  height: 5rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  font-size: 1rem;
+  padding: 2.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
   border: 2px solid brown;
   background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(162, 42, 42, 0.5);
 }
 
 .category-button-container {
@@ -87,7 +92,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  width: 35rem;
+  max-width: 35rem;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -211,7 +216,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .introButton {
   width: 90%;
@@ -227,21 +232,34 @@
 }
 .mainTitle {
   font-size: 1.8rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 1rem 0;
   font-weight: bold;
 }
 .subTitle {
   font-size: 1rem;
   margin-bottom: 1rem;
   letter-spacing: -0.1rem;
+  color: #999999;
 }
 .introText {
   font-size: 1rem;
   padding: 0 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Result */
 .resultText {
   font-size: 1rem;
   margin: 1rem 0;
+}
+.line {
+  width: 70%;
+  height: 2px;
+  background-color: brown;
+  margin: 2rem auto;
+}
+
+.questionNumber {
+  font-size: 1rem;
+  color: #999999;
 }
