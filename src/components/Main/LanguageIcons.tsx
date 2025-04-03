@@ -1,6 +1,7 @@
 import { CircleFlag } from "react-circle-flags";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 const LanguageIcons = () => {
   const navigate = useNavigate();
@@ -11,6 +12,10 @@ const LanguageIcons = () => {
     navigate(`/?lang=${countryCode}`);
     i18n.changeLanguage(countryCode);
   };
+
+  useEffect(() => {
+    i18n.changeLanguage(searchParams.get("lang") || "Kor");
+  }, [searchParams, i18n]);
 
   return (
     <div className="languageIcons">
