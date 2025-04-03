@@ -1,7 +1,6 @@
 import { CircleFlag } from "react-circle-flags";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
 
 const LanguageIcons = () => {
   const navigate = useNavigate();
@@ -13,10 +12,6 @@ const LanguageIcons = () => {
     i18n.changeLanguage(countryCode);
   };
 
-  useEffect(() => {
-    i18n.changeLanguage(searchParams.get("lang") || "Kor");
-  }, [searchParams, i18n]);
-
   return (
     <div className="languageIcons">
       <CircleFlag
@@ -27,7 +22,8 @@ const LanguageIcons = () => {
             : ""
         }`}
         countryCode="kr"
-        width={48}
+        width={40}
+        height={70}
         onClick={() => onButtonClick("Kor")}
       />
       <CircleFlag
@@ -35,7 +31,8 @@ const LanguageIcons = () => {
           searchParams.get("lang") === "Eng" ? "active" : ""
         }`}
         countryCode="us"
-        width={48}
+        width={40}
+        height={70}
         onClick={() => onButtonClick("Eng")}
       />
       <CircleFlag
@@ -43,7 +40,8 @@ const LanguageIcons = () => {
           searchParams.get("lang") === "JP" ? "active" : ""
         }`}
         countryCode="jp"
-        width={48}
+        width={40}
+        height={70}
         onClick={() => onButtonClick("JP")}
       />
     </div>

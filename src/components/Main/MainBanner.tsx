@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-
+import LanguageIcons from "./LanguageIcons";
 const MainBanner = () => {
   const { t, i18n } = useTranslation();
   const [searchParams] = useSearchParams();
@@ -12,7 +12,8 @@ const MainBanner = () => {
 
   return (
     <div className="mainBanner">
-      <h1>{t("title")}</h1>
+      <span className="headerTitle">{t("title")}</span>
+      <LanguageIcons />
     </div>
   );
 };

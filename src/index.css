@@ -13,10 +13,32 @@
   text-align: center;
 }
 
+.logo {
+  width: 180px;
+}
+
 /* Main */
 .mainBanner {
-  border: 1px solid black;
-  padding: 2rem;
+  height: 60px;
+  width: 35rem;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(165, 42, 42, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 2px solid brown;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.headerTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: brown;
 }
 
 .languageIcons {
@@ -31,6 +53,7 @@
 }
 
 .thumbnail-list {
+  margin-top: 110px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -58,16 +81,36 @@
   background-color: white;
 }
 
+.category-button-container {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 35rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid brown;
+  border-right: 1px solid brown;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
 .category-button {
-  min-width: 5rem;
   padding: 0 0.5rem;
   height: 2rem;
-  margin: 1rem 0.5rem;
-  border: 1px solid brown;
-  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-right: 1px solid brown;
+  border-left: 1px solid brown;
+  border-top: 2px solid brown;
+  border-bottom: 2px solid brown;
   background-color: white;
   color: brown;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 

@@ -25,7 +25,7 @@ const CategoryButtons = () => {
   };
 
   return (
-    <div>
+    <div className="category-button-container">
       <button
         className={`category-button ${
           searchParams.get("category") === "all" ||
